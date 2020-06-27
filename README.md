@@ -6,14 +6,12 @@ HackMD fishing made with Go 1.12
 
 ```
 go build
-
 ```
 
 ## Run
 
 ```
 ./hackmd-fishing
-
 ```
 
 ## Author
