@@ -25,21 +25,22 @@ func main() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
+	url := os.Getenv("URL")
 	charset := os.Getenv("CHARSET")
 	length, err := strconv.Atoi(os.Getenv("LENGTH"))
 	if err != nil {
 		log.Fatal("Error loading .env length")
 	}
 	for {
-		url := fmt.Sprintf(os.Getenv("URL"), RandStringWithCharset(length, charset))
-		response, err := http.Get(url)
+		resource := fmt.Sprintf(url, RandStringWithCharset(length, charset))
+		response, err := http.Get(resource)
 		if err != nil {
-			log.Fatalf("error on get url %s: %v", url, err)
+			log.Fatalf("error on get resource %s: %v", resource, err)
 		}
 		mark := ""
 		if response.StatusCode != 404 {
 			mark = "<<<"
 		}
-		log.Println(url, response.StatusCode, mark)
+		log.Println(resource, response.StatusCode, mark)
 	}
 }
