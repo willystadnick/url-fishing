@@ -2,6 +2,10 @@
 
 HackMD fishing made with Go 1.12
 
+## Config
+
+Copy `.env.{any}` to `.env`.
+
 ## Run
 
 ```
