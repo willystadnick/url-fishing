@@ -4,7 +4,11 @@ URL fishing made with Go 1.12
 
 ## Config
 
-Copy `.env.{any}` to `.env`.
+Create a symbolic link from `.env.{any}` to `.env`. E.g.:
+
+```
+ln -sf .env.hackmd .env
+```
 
 ## Run
 
