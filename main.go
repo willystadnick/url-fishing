@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/joho/godotenv"
 	"log"
 	"math/rand"
@@ -34,7 +35,7 @@ func main() {
 		log.Fatal("Error loading .env length")
 	}
 	for {
-		url := os.Getenv("URL") + RandStringWithCharset(length, charset)
+		url := fmt.Sprintf(os.Getenv("URL"), RandStringWithCharset(length, charset))
 		response, err := http.Get(url)
 		if err != nil {
 			log.Fatalf("error on get url %s: %v", url, err)
