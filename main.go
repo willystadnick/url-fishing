@@ -13,11 +13,11 @@ import (
 
 func RandomString(charset string, length int) string {
 	seed := rand.New(rand.NewSource(time.Now().UnixNano()))
-	b := make([]byte, length)
-	for i := range b {
-		b[i] = charset[seed.Intn(len(charset))]
+	output := make([]byte, length)
+	for i := range output {
+		output[i] = charset[seed.Intn(len(charset))]
 	}
-	return string(b)
+	return string(output)
 }
 
 func main() {
