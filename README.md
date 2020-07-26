@@ -1,6 +1,6 @@
-# hackmd-fishing
+# url-fishing
 
-HackMD fishing made with Go 1.12
+URL fishing made with Go 1.12
 
 ## Config
 
