@@ -7,7 +7,6 @@ import (
 	"time"
 )
 
-// https://www.calhoun.io/creating-random-strings-in-go
 const charset = "abcdefghijklmnopqrstuvwxyz" +
 	"ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
 	"0123456789" +
