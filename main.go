@@ -23,10 +23,6 @@ func RandStringWithCharset(length int, charset string) string {
 	return string(b)
 }
 
-func RandString(length int) string {
-	return RandStringWithCharset(length, charset)
-}
-
 func main() {
 	err := godotenv.Load()
 	if err != nil {
@@ -38,7 +34,7 @@ func main() {
 		log.Fatal("Error loading .env length")
 	}
 	for {
-		url := os.Getenv("URL") + RandString(length)
+		url := os.Getenv("URL") + RandStringWithCharset(length, charset)
 		response, err := http.Get(url)
 		if err != nil {
 			log.Fatalf("error on get url %s: %v", url, err)
