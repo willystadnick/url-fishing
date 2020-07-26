@@ -37,7 +37,7 @@ func main() {
 			log.Fatalf("error on get url %s: %v", url, err)
 		}
 		mark := ""
-		if response.StatusCode == 200 {
+		if response.StatusCode != 404 {
 			mark = "<<<"
 		}
 		log.Println(url, response.StatusCode, mark)
