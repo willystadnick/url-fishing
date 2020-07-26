@@ -2,16 +2,10 @@
 
 HackMD fishing made with Go 1.12
 
-## Build
-
-```
-go build
-```
-
 ## Run
 
 ```
-./hackmd-fishing
+go run main.go
 ```
 
 ## Reference
