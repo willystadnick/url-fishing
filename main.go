@@ -11,15 +11,11 @@ import (
 	"time"
 )
 
-var charset = ""
-
-var randSeed *rand.Rand = rand.New(
-	rand.NewSource(time.Now().UnixNano()))
-
 func RandStringWithCharset(length int, charset string) string {
+	seed := rand.New(rand.NewSource(time.Now().UnixNano()))
 	b := make([]byte, length)
 	for i := range b {
-		b[i] = charset[randSeed.Intn(len(charset))]
+		b[i] = charset[seed.Intn(len(charset))]
 	}
 	return string(b)
 }
@@ -29,7 +25,7 @@ func main() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
-	charset = os.Getenv("CHARSET")
+	charset := os.Getenv("CHARSET")
 	length, err := strconv.Atoi(os.Getenv("LENGTH"))
 	if err != nil {
 		log.Fatal("Error loading .env length")
